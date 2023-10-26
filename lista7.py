@@ -2,14 +2,36 @@ import random as r
 import math
 q = True
 def menu():
-    print("0 - Sair")
-    print("1 - Valor em Dobro")
-    print("2 - Data")
-    print("3 - Positivo ou Negativo")
-    print("4 - Quadrado Perfeito")
-    print("5 - Hipotenusa")
-    print("6 - Maior número")
+
+    print("\033[91m0 - Sair\033[0m")
+    print("\033[93m1 - Valor em Dobro\033[0m")
+    print("\033[94m2 - Data\033[0m")
+    print("\033[91m3 - Positivo ou Negativo\033[0m")
+    print("\033[93m4 - Quadrado Perfeito\033[0m")
+    print("\033[95m5 - Hipotenusa\033[0m")
+    print("\033[94m6 - Maior número\033[0m")
+    print("\033[93m7 - Soma dos Algarismos de um Número\033[0m")
+    print("\033[91m8 - Desenha Linha\033[0m")
+    print("\033[96m9 - Soma dos Números Inteiros entre Dois Números\033[0m")
+    print("\033[95m10 - Cálculo Manual de Potência\033[0m")
+    print("\033[92m11 - Maior Fator Primo\033[0m")
+    print("\033[94m12 - Quantidade de Números Primos Abaixo de N\033[0m")
+    print("\033[93m13 - Padrão de Exclamações\033[0m")
+    print("\033[91m14 - Triângulo Lateral\033[0m")
+    print("\033[96m15 - Soma dos Algarismos de N!\033[0m")
+    print("\033[95m16 - Triângulo\033[0m")
+    print("\033[92m17 - Cosseno usando Série de Taylor\033[0m")
+    print("\033[94m18 - Fatorial Duplo\033[0m")
+    print("\033[93m19 - Operações com Vetores\033[0m")
+    print("\033[91m20 - Valores Maiores que 10 numa Matriz 4x4\033[0m")
+    print("\033[96m21 - Verificar Matriz Identidade (13x13)\033[0m")
+    print("\033[95m22 - Soma de uma Coluna numa Matriz (32x23)\033[0m")
+
+
+
+    
     print("Qual questão deseja executar?")
+
 def Q1():
     def func(x):
         return x*2
@@ -74,14 +96,32 @@ def Q6(n1,n2):
         return print(f"{n2} maior que {n1}")
     if n1==n2:
         return print(f"{n1} igual a {n2}")
-def Q7():
-    a = 0
-def Q8():
-    a = 0
-def Q9():
-    a = 0
-def Q10():
-    a = 0
+def Q7(num):
+    if num>0:
+        numS = str(num)
+        soma = 0
+
+        for x in numS:
+            soma += int(x)
+
+        return print(soma)
+    else:
+        print("Número Inválido")
+
+def Q8(num):
+    return print(num*"=")
+
+def Q9(num1,num2):
+    if num1>0 and num2>0:
+        soma = 0
+        for x in range(num1, num2+1):
+            soma += x
+        return print(soma)
+    else:
+        print("Ambos devem ser números inteiros positivos")
+
+def Q10(x,y):
+    return print(x**y)
 def Q11():
     a = 0
 def Q12():
@@ -142,8 +182,43 @@ while q:
         num2 = int(input("Digite o segundo número: "))
         Q6(num1,num2)
     elif q == 7:
-        Q7()
+        num = int(input("N>0: "))
+        Q7(num)
     elif q == 8:
-        Q8()
+        num = int(input("Desenha Linha: "))
+        Q8(num)
+    elif q == 9:
+        num1 = int(input("Digite o primeiro número: "))
+        num2 = int(input("Digite o segundo número: "))
+        Q9(num1,num2)
+    elif q == 10:
+        x = int(input("Digite o primeiro número: "))
+        y = int(input("Digite o segundo número: "))
+        Q10(x,y)
+    elif q == 11:
+
+        Q11()
+    elif q == 12:
+        Q12()
+    elif q == 13:
+        Q13()
+    elif q == 14:
+        Q14()
+    elif q == 15:
+        Q15()
+    elif q == 16:
+        Q16()
+    elif q == 17:
+        Q17()
+    elif q == 18:
+        Q18()
+    elif q == 19:
+        Q19()
+    elif q == 20:
+        Q20()
+    elif q == 21:
+        Q21()
+    elif q == 22:
+        Q22()
     else:
         print("Erro")
